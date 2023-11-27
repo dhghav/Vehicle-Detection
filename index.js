@@ -38,7 +38,7 @@ app.get("/latest_location", (req, res) => {
 // Function to fetch latest location
 async function fetchLatestLocation() {
   try {
-    const response = await axios.get("http://localhost:9090/latest_location");
+    const response = await axios.get("https://alert-hen-pocket.cyclic.app/latest_location");
     const { latitude, longitude } = response.data;
     console.log(`Latest Latitude: ${latitude}, Longitude: ${longitude}`);
     // Perform any other actions with latitude and longitude here
