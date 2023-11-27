@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Endpoint to receive location updates
 app.post("/get_location", (req, res) => {
-  const { latitude, longitude } = req.body;
+  const { latitude, longitude } = req.query; // Change req.body to req.query
   latestLocation.latestLatitude = latitude;
   latestLocation.latestLongitude = longitude;
   console.log(
@@ -27,6 +27,7 @@ app.post("/get_location", (req, res) => {
   );
   res.status(200).send("Location received successfully");
 });
+
 
 // Endpoint to fetch latest latitude and longitude
 app.get("/latest_location", (req, res) => {
