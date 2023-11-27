@@ -43,10 +43,8 @@ app.post("/get_location", (req, res) => {
     `Received location update - Latitude: ${latitude}, Longitude: ${longitude}`
   );
   // call function
-  if (latitude !== "" && longitude !== "") {
-    console.log("call");
+  
     funPrint(latitude, longitude);
-  }
 
   // Store the latest location
   latestLocation = { latitude, longitude };
